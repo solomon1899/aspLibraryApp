@@ -1,0 +1,52 @@
+﻿@model LibraryApp.Models.BookCategory
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Book Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">        
+        <dt class="col-sm-2">
+            <img style="width:150px;" src="@Html.DisplayFor(model => model.book.ImageUrl)"/>
+        </dt> 
+        <div style="height: 40px;"></div>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.book.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.book.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.book.Author)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.book.Author)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.book.NumberOfCopies)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.book.NumberOfCopies)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.book.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.book.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="Borrows" asp-action="AddTransaction" asp-route-id="@Model.book.Id" class="btn btn-primary">Borrow</a> 
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>

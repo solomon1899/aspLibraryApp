@@ -1,0 +1,82 @@
+﻿@model IEnumerable<LibraryApp.Models.BookCategory>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add the script reference for SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        // Show a SweetAlert notification
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: '@TempData["SuccessMessage"]',
+        });
+    </script>
+}
+
+<h1>Books Available</h1>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.book.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.book.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.book.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.book.NumberOfCopies)
+            </th>
+            <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img style="width: 75px;" src="@item.book.ImageUrl" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.book.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.book.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.book.NumberOfCopies)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.book.Id" class="bookDetailBtn">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</body>
+</html>

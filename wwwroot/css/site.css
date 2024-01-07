@@ -1,0 +1,117 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+/*My styles*/
+
+.home-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+        url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxpYnJhcnklMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-btn {
+    width: 150px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* 400 700 */
+    display: inline-block;
+    padding: 15px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Set shadow properties */
+    transition: box-shadow 0.3s ease;
+    background-color: #dcdcdc;
+    margin: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.bookDetailBtn {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #86775f; 
+}
+
+.navbarItem {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* 400 700 */
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Set shadow properties */
+    transition: box-shadow 0.3s ease;
+    background-color: #dcdcdc;
+    margin: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+#logout {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* 400 700 */
+}
+
+.navbarItem:hover, .home-btn:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+}
+
+.categoryItem {
+    text-decoration: none;
+    font-size: 25px;
+    width: 300px;
+    height: 200px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categoryItem:hover {
+    color: white;
+    background-color: #413f3f;
+    transition: 0.5s;
+}
+
+@media (max-width: 750px) {
+.categories-grid {
+    grid-template-columns: 1fr;  
+  }
+}
